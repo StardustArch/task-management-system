@@ -1,0 +1,108 @@
+          body {
+                background-color: #f8f9fa;
+                font-family: Arial, sans-serif;
+            }
+
+            .report-header {
+                background-color: #007bff;
+                color: white;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+
+            .table {
+                margin-top: 20px;
+                border: 1px solid #dee2e6;
+            }
+
+            .table th {
+                background-color: #343a40;
+                color: white;
+            }
+
+
+            .card {
+                margin-top: 15px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+             .card-body {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center; /* Centraliza horizontalmente */
+                            justify-content: center; /* Centraliza verticalmente */
+                            text-align: center; /* Centraliza o texto */
+                            height: 100%; /* Garante que o conteúdo preencha o card */
+                        }
+
+
+
+                .spinner-container {
+                    position: relative;
+                    width: 100px; /* Ajuste o tamanho conforme necessário */
+                    height: 100px; /* Ajuste o tamanho conforme necessário */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column; /* Permite que o texto fique embaixo do spinner */
+
+                }
+
+                .spinner {
+                    --value: 67; /* Valor padrão, será substituído dinamicamente */
+                    --percentage: 0; /* Inicialmente 0% */
+                    --primary: black; /* Cor do progresso */
+                    --secondary: transparent; /* Cor da parte não preenchida */
+                    --size: 100px; /* Ajuste o tamanho conforme necessário */
+                    width: var(--size);
+                    height: var(--size);
+                    border-radius: 50%;
+                    position: relative;
+                    overflow: hidden;
+                    display: grid;
+                    place-items: center;
+                    animation: progress-animation  3s ease-in-out forwards ; /* Animação do progresso */
+                }
+
+                .spinner::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    background: conic-gradient(
+                        var(--primary) 0% calc(var(--percentage) * 1%),
+                        var(--secondary) calc(var(--percentage) * 1%) 100%
+                    );
+                    mask: radial-gradient(circle, transparent 55%, black 56%);
+                    -webkit-mask: radial-gradient(circle, transparent 55%, black 56%);
+                }
+
+                .spinner-text {
+                    position: absolute;
+                    font-size: 1.2em;
+                    color: black; /* Ajuste a cor conforme necessário */
+                }
+
+                /* Animação do progresso */
+                @keyframes progress-animation {
+                    from {
+                        --percentage: 0;
+                    }
+                    to {
+                        --percentage: var(--value);
+                    }
+                }
+
+            .btn-custom {
+                background-color: #007bff;
+                color: white;
+                border-radius: 5px;
+            }
+
+            .btn-custom:hover {
+                background-color: #0056b3;
+            }
